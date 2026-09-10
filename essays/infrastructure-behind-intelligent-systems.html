@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The infrastructure behind intelligent systems · Echelon Research</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header"><div class="container nav"><a class="brand" href="../index.html">ECHELON RESEARCH</a><nav class="nav-links"><a href="../index.html#about">About</a><a href="../index.html#essays">Essays</a></nav></div></header>
+    <main class="article-shell">
+      <a class="back-link" href="../index.html#essays">← Back to essays</a>
+      <div class="kicker">Technology · Demo template</div>
+      <h1>The infrastructure behind intelligent systems</h1>
+      <p class="article-intro">A working template for explaining an agent-assisted stock selection tool: define the operator’s intent, expose uncertainty, and make every assumption adjustable.</p>
+
+      <section class="article-section">
+        <h2>1. The thesis</h2>
+        <p><strong>Replace this paragraph with the essay’s central claim.</strong> A useful essay should explain the problem, name the decision that matters, and show why the proposed workflow improves human judgment rather than hiding it behind automation.</p>
+      </section>
+
+      <section class="article-section">
+        <h2>2. The basic user journey</h2>
+        <p>The operator chooses a universe, loads a methodology preset, adds constraints, and reviews an indicative result. This demo uses illustrative values only; a production version should connect to validated market data and show methodology, timestamp, fees, and limitations.</p>
+        <div class="demo-panel">
+          <form id="selection-form">
+            <div class="demo-grid">
+              <div class="field"><label for="universe">Universe</label><select id="universe" name="universe"><option>Hang Seng China Index</option><option>MSCI China</option><option>Custom watchlist</option></select></div>
+              <div class="field"><label for="methodology">Methodology preset</label><select id="methodology" name="methodology"><option value="quality">Quality compounders</option><option value="value">Value recovery</option><option value="momentum">Earnings momentum</option></select></div>
+              <div class="field"><label for="horizon">Holding horizon</label><select id="horizon" name="horizon"><option value="1">1 year</option><option value="3" selected>3 years</option><option value="5">5 years</option></select></div>
+              <div class="field"><label for="tilt">Risk tilt</label><select id="tilt" name="tilt"><option value="conservative">Conservative</option><option value="balanced" selected>Balanced</option><option value="opportunistic">Opportunistic</option></select></div>
+              <div class="field field-wide"><label for="comments">Additional operator input</label><textarea id="comments" name="comments" placeholder="E.g. exclude highly leveraged companies; prioritize cash generation."></textarea></div>
+            </div>
+            <button class="demo-button" type="submit">Run illustrative selection</button>
+          </form>
+          <div class="demo-result" id="demo-result" hidden>
+            <div class="meta">Illustrative output · not investment advice</div>
+            <div class="result-grid"><div><div class="meta">Method</div><div class="result-value" data-result="method"></div></div><div><div class="meta">3-year annualized return</div><div class="result-value" data-result="return"></div></div><div><div class="meta">Risk profile</div><div class="result-value" data-result="risk"></div></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="article-section">
+        <h2>3. When the agent is unsure</h2>
+        <p>Do not force a hidden guess. Present the trade-off, let the operator select a path, and preserve the choice in the audit trail.</p>
+        <div class="demo-panel">
+          <div class="meta">Agent clarification</div>
+          <p id="scenario">The request “find resilient growth” could mean lower drawdown or faster earnings growth. Which interpretation should guide the next screen?</p>
+          <div class="choice-row"><button class="choice" type="button" data-scenario="a"><strong>Scenario A</strong><br>Resilience first: stronger balance sheets and lower drawdown.</button><button class="choice" type="button" data-scenario="b"><strong>Scenario B</strong><br>Growth first: faster earnings growth and higher volatility.</button></div>
+        </div>
+      </section>
+
+      <section class="article-section">
+        <h2>4. Sensitivity tests to add next</h2>
+        <p>Let the operator vary one assumption at a time: valuation cut-off, leverage ceiling, earnings-growth floor, rebalance frequency, concentration limit, and transaction-cost estimate. Show a small table or chart of how the selected names and expected return change.</p>
+      </section>
+
+      <section class="article-section">
+        <h2>5. Implementation notes</h2>
+        <p><strong>Fill this section with your architecture.</strong> A durable version should separate data ingestion, methodology definitions, agent orchestration, calculation, persistence, and the presentation layer. Log the source data, prompt, preset version, user overrides, and final decision so another person can reproduce the result.</p>
+      </section>
+    </main>
+    <footer><div class="container">Echelon Research · Ideas for the long view</div></footer>
+    <script src="../assets/js/selection-demo.js"></script>
+  </body>
+</html>
